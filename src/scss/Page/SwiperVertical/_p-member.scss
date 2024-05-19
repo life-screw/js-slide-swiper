@@ -1,0 +1,277 @@
+@use "sass:math";
+@use "../../Setting/"as s;
+
+
+
+//スライド部分====================
+.p-member-slide-area {
+	//スライドの高さに応じて、ナビゲーションが中央に来るようにする
+	position: relative;
+	//装飾（任意）
+	border-radius: 31px;
+	background: #fff;
+	padding-bottom: s.vw(s.$spDesign, 38);
+
+	@include s.media(md) {
+		//タブレット・pcの時
+		padding-bottom: 0;
+
+	}
+
+	//ナビゲーション（前・次の矢印）のCSSが必要なら設定========
+	.swiper-button-prev,
+	.swiper-button-next {
+		height: 42px;
+		width: 42px;
+		border-radius: 50%;
+		text-indent: -9999px;
+		background: #0070e5;
+
+		@include s.media(md) {
+			//タブレット・pcの時
+			//縦スライドの時-------
+			margin: 0;
+			//装飾（任意）
+			width: 37px;
+			height: 37px;
+			left: s.p(s.$pcContainer, 30);
+		}
+
+		// &.swiper-button-disabled {
+		// 	visibility: hidden;
+		// }
+	}
+
+	.swiper-button-prev {
+		@include s.media(mdmax) {
+			//スマホの時のみ
+			left: max(-20px, -4.333333vw);
+
+			&::before {
+				content: '';
+				display: block;
+				margin: auto;
+				width: 8px;
+				height: 8px;
+				border-left: 2px solid #fff;
+				border-bottom: 2px solid #fff;
+				transform: translateX(25%) rotate(45deg);
+			}
+		}
+
+		@include s.media(md) {
+			//タブレット・pcの時
+			//縦スライドの時-------
+			top: 55px;
+
+			&::before {
+				content: '';
+				display: block;
+				margin: auto;
+				width: 8px;
+				height: 8px;
+				border-left: 2px solid #fff;
+				border-bottom: 2px solid #fff;
+				transform: translateY(25%) rotate(135deg);
+				transform-origin: center center;
+			}
+		}
+	}
+
+	.swiper-button-next {
+		@include s.media(mdmax) {
+			//スマホの時のみ
+			right: max(-20px, -4.333333vw);
+
+			&::before {
+				content: '';
+				display: block;
+				margin: auto;
+				width: 8px;
+				height: 8px;
+				border-right: 2px solid #fff;
+				border-top: 2px solid #fff;
+				transform: translateX(-25%) rotate(45deg);
+			}
+		}
+
+		@include s.media(md) {
+			//タブレット・pcの時
+			//縦スライドの時-------
+			top: auto;
+			bottom: 55px;
+
+			&::before {
+				content: '';
+				display: block;
+				margin: auto;
+				width: 8px;
+				height: 8px;
+				border-left: 2px solid #fff;
+				border-bottom: 2px solid #fff;
+				transform: translateY(-25%) rotate(-45deg);
+				transform-origin: center center;
+			}
+		}
+	}
+}
+
+.p-member-slide {
+	//カレントスライド以外のスライドが見えないようにする
+	overflow: hidden;
+	//装飾（任意）
+	position: relative;
+	padding: s.vw(s.$spDesign, 35) min(37px, s.vw(s.$spDesign, 37)) s.vw(s.$spDesign, 35+10);
+
+	@include s.media(md) {
+		//タブレット・pcの時
+
+		//スライドを縦方向にする
+		height: 385px; //高さを固定する
+		//装飾（任意）
+		padding: 55px min(60px, s.p(s.$pcContainer, 60));
+	}
+
+	/*ページネーション（ドットの部分）が必要なら設定
+	スマホ：横スライド
+	PC：縦スライド
+	*/
+	.swiper-pagination {
+
+		&.swiper-pagination-bullets {
+			@include s.media(mdmax) {
+				//スマホの時のみ
+				bottom: 0;
+				left: 50%;
+				width: fit-content;
+				transform: translateX(-50%);
+			}
+
+			@include s.media(md) {
+				//タブレット・pcの時
+				//縦スライドの時-------
+				width: fit-content;
+				position: absolute;
+				top: 50%;
+				left: s.p(s.$pcContainer, 43);
+			}
+		}
+
+		.swiper-pagination-bullet {
+			margin: 0;
+			background-color: #c4c4c4;
+			width: 10px;
+			height: 10px;
+			opacity: 1;
+
+			&:first-child {
+				@include s.media(mdmax) {
+					//スマホの時のみ
+					margin-left: 0;
+				}
+			}
+		}
+
+		.swiper-pagination-bullet+.swiper-pagination-bullet {
+			@include s.media(mdmax) {
+				//スマホの時のみ
+				margin-left: 1rem;
+			}
+
+			@include s.media(md) {
+				//タブレット・pcの時
+				//縦スライドの時-------
+				margin-top: 2rem;
+			}
+		}
+
+		.swiper-pagination-bullet-active {
+			background-color: #0070e5;
+		}
+	}
+}
+
+//スライドの中の装飾（任意）
+.p-member {
+	$this: &;
+	padding: s.vw(s.$spDesign, 40) 0 s.vw(s.$spDesign, 60);
+	background: #d6eaff;
+	color: #0070e5;
+	min-height: 100vh;
+
+	@include s.media(md) {
+		//タブレット・pcの時
+		padding: 100px 0 160px;
+	}
+
+	&__contents {
+
+		@include s.media(md) {
+			//タブレット・pcの時
+			display: flex;
+			align-items: center;
+			flex-direction: row-reverse;
+		}
+
+		@include s.media(md) {
+			//PCの時
+			margin-left: auto;
+			width: 92%;
+			height: 100%;
+		}
+	}
+
+
+	&__img {
+		margin: 0 auto s.vw(s.$spDesign, 30);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		// overflow: hidden;
+		// border-radius: 50%;
+		width: s.vw(s.$spDesign, 173);
+
+		@include s.media(md) {
+			//タブレット・pcの時
+			margin: 0 0 0 s.p(s.$pcContainer, 50);
+			width: s.p(s.$pcContainer, 240);
+			// width: 240px;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__textarea {
+		text-align: left;
+	}
+
+	&__title {
+		position: relative;
+		width: fit-content;
+		margin-bottom: .05em;
+		// フォントサイズ, 行送り , 太さ, トラッキング
+		@include s.f_sp-min_around(18, false, bold, false);
+
+		@include s.media(md) {
+			//タブレット・pcの時
+			margin-bottom: .4em;
+			font-size: 3rem;
+			line-height: 1;
+		}
+
+	}
+
+
+	&__text {
+		margin-top: 1.6em;
+		// フォントサイズ, 行送り , 太さ, トラッキング
+		@include s.f_sp-min_around(13, 22, bold, 30);
+
+		@include s.media(md) {
+			// フォントサイズ, 行送り , 太さ, トラッキング
+			@include s.f_pc_around(14, 24, false, 30);
+		}
+	}
+}

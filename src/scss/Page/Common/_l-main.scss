@@ -1,0 +1,8 @@
+@use "sass:math";
+@use "../../Setting/"as s;
+
+.l-main {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}

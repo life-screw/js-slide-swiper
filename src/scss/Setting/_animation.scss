@@ -1,0 +1,173 @@
+// ハンバーガーメニューのアニメーション-------
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+//　見出しのアニメーション 関数化==============
+// 通常のCSS-----------
+@mixin headlineAnim {
+	span {
+		display: inline-block;
+		position: relative;
+		transform: translate(80%, 0);
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out 0.1s,
+			transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: rgba($color: #ddd, $alpha: 0.8);
+		}
+	}
+}
+
+// .is-showを付与した時（アニメーション発火）-----------
+@mixin headlineAnimActive {
+	span {
+		transform: translate(0, 0);
+		opacity: 1;
+
+		&::before {
+			opacity: 0;
+			transition: opacity 0.2s ease-in-out 0.1s;
+		}
+	}
+}
+
+// フェードインアニメーション 関数化==============
+// 通常のCSS-----------
+@mixin fadeinAnim {
+	filter: blur(10px);
+	opacity: 0;
+	transform: translateY(10px);
+	transition: filter .55s ease,
+		opacity .55s ease,
+		transform .55s ease;
+}
+
+// .is-showを付与した時（アニメーション発火）-----------
+@mixin fadeinAnimActive {
+	filter: blur(0);
+	opacity: 1;
+	transform: translateY(0);
+}
+
+//　拡大してフェードインするアニメーション 関数化==============
+// 通常のCSS-----------
+@mixin scaleAnim {
+	overflow: hidden; //発火前の横ずれをなくす
+	opacity: 0;
+	transform: translate(0, -30px) scale(1.08);
+	transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+// .is-showを付与した時（アニメーション発火）-----------
+@mixin scaleAnimActive {
+	overflow: visible; //発火するときにはoverflowをvisibleにする
+	opacity: 1;
+	transform: translate(0) scale(1);
+}
+
+//リンクの矢印のアニメーション------------
+$line-height: -100%;
+$line-height-abs: 100%;
+
+@keyframes arrowLine {
+	0% {
+		background: linear-gradient(to right,
+				rgba(0, 0, 0, 1) 49%,
+				rgba(0, 0, 0, 0.5) 50%,
+				rgba(0, 0, 0, 0) 51%);
+		background-position: 0 0;
+		background-size: 300% 100%;
+	}
+
+	//   25% {
+	//     background-position: $line-height 0;
+	//   }
+	26% {
+		//線の要素を右から左に移動させる間、線を透明にする
+		background-position: $line-height 0;
+		background: transparent;
+	}
+
+	27% {
+		//線の要素を右から左に移動させる間、線を透明にする
+		background-position: $line-height-abs 0;
+		background: transparent;
+	}
+
+	28% {
+		//再び線を出す
+		background: linear-gradient(to right,
+				rgba(0, 0, 0, 1) 49%,
+				rgba(0, 0, 0, 0.5) 50%,
+				rgba(0, 0, 0, 0) 51%);
+		background-size: 300% 100%;
+		background-position: $line-height-abs 0;
+	}
+
+	75% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: $line-height 0;
+	}
+}
+
+@keyframes arrowLineWhite {
+	0% {
+		background: linear-gradient(to right,
+				rgba(216, 201, 169, 1) 49%,
+				rgba(216, 201, 169, 0.5) 50%,
+				rgba(216, 201, 169, 0) 51%);
+		background-position: 0 0;
+		background-size: 300% 100%;
+	}
+
+	//   25% {
+	//     background-position: $line-height 0;
+	//   }
+	25% {
+		//線の要素を右から左に移動させる間、線を透明にする
+		background-position: $line-height 0;
+		background: transparent;
+	}
+
+	27% {
+		//線の要素を右から左に移動させる間、線を透明にする
+		background-position: $line-height-abs 0;
+		background: transparent;
+	}
+
+	29% {
+		//再び線を出す
+		background: linear-gradient(to right,
+				rgba(216, 201, 169, 1) 48%,
+				rgba(216, 201, 169, 0.5) 50%,
+				rgba(216, 201, 169, 0) 52%);
+		background-size: 300% 100%;
+		background-position: $line-height-abs 0;
+	}
+
+	75% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: $line-height 0;
+	}
+}

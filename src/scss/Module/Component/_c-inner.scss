@@ -1,0 +1,20 @@
+@use "sass:math";
+@use "../../Setting/"as s;
+
+.c-inner {
+	@include s.inner;
+
+	@include s.media(md) {
+		//タブレット・pcの時
+		width: calc(100% - 8vw);
+	}
+}
+
+.c-inner-wide {
+	@include s.innerWide;
+
+	@include s.media(md) {
+		//タブレット・pcの時
+		width: calc(100% - 8vw);
+	}
+}
