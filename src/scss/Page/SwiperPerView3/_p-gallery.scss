@@ -61,7 +61,7 @@
 		width: 45px;
 		border-radius: 50%;
 		text-indent: -9999px;
-		background: #ed3535;
+		background: var(--color-main);
 
 		// &.swiper-button-disabled {
 		// 	visibility: hidden;
@@ -145,7 +145,7 @@
 		}
 
 		.swiper-pagination-bullet-active {
-			background-color: #ed3535;
+			background-color: var(--color-main);
 		}
 	}
 }

@@ -182,7 +182,7 @@
   width: 45px;
   border-radius: 50%;
   text-indent: -9999px;
-  background: #ed3535;
+  background: var(--color-main);
 }
 .p-gallery-slide .swiper-button-prev {
   top: auto;
@@ -249,5 +249,5 @@
   margin-left: 0.8rem;
 }
 .p-gallery-slide .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #ed3535;
+  background-color: var(--color-main);
 }

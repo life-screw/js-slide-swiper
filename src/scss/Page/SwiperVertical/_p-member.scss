@@ -25,7 +25,7 @@
 		width: 42px;
 		border-radius: 50%;
 		text-indent: -9999px;
-		background: #0070e5;
+		background: var(--color-main);
 
 		@include s.media(md) {
 			//タブレット・pcの時
@@ -186,7 +186,7 @@
 		}
 
 		.swiper-pagination-bullet-active {
-			background-color: #0070e5;
+			background-color: var(--color-main);
 		}
 	}
 }
@@ -196,7 +196,7 @@
 	$this: &;
 	padding: s.vw(s.$spDesign, 40) 0 s.vw(s.$spDesign, 60);
 	background: #d6eaff;
-	color: #0070e5;
+	color: var(--color-main);
 	min-height: 100vh;
 
 	@include s.media(md) {

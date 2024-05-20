@@ -145,7 +145,7 @@
   width: 42px;
   border-radius: 50%;
   text-indent: -9999px;
-  background: #0070e5;
+  background: var(--color-main);
 }
 @media print, screen and (min-width:769px) {
   .p-member-slide-area .swiper-button-prev,
@@ -285,13 +285,13 @@
   }
 }
 .p-member-slide .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #0070e5;
+  background-color: var(--color-main);
 }
 
 .p-member {
   padding: 10.6666666667vw 0 16vw;
   background: #d6eaff;
-  color: #0070e5;
+  color: var(--color-main);
   min-height: 100vh;
 }
 @media print, screen and (min-width:769px) {
