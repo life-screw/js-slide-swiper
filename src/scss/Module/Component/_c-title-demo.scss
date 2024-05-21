@@ -1,0 +1,14 @@
+@use "sass:math";
+@use "../../Setting/"as s;
+
+.c-title-demo {
+	margin: 1em auto;
+	line-height: 1.5;
+	font-size: s.vw(s.$spDesign, 18);
+	white-space: nowrap;
+
+	@include s.media(md) {
+		//タブレット・pcの時
+		font-size: 36px;
+	}
+}
