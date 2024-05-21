@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // Swiperの初期化（Gallery）------------------------
-const swiperGallery = new Swiper(".js-swiper-slide", {
+const swiperGallery = new Swiper(".js-swiper--gallery", {
   // ●●必要なモジュールを読み込み(npmの時)
   modules: [Navigation, Pagination],
   // Swiperのオプションを設定===========
