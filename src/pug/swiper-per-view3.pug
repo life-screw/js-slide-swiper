@@ -1,0 +1,95 @@
+//- ページのID名
+- const pageID = "swiper-per-view3"
+//- 画像パス
+- const imgPathCommon = "./dist/img/common/"
+//- - const imgPath = "./dist/img/" +  pageID + "/"
+include ./_mixinPic
+
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="format-detection" content="email=no,telephone=no,address=no")
+		title 【Swiper】基本のスライダー(コンテンツ内に収める)
+		meta(name="description" content="【Swiper】基本のスライダー(コンテンツ内に収める)")
+		//- 共通CSS
+		link(rel="stylesheet" href="./dist/css/common.css")
+		<!-- ▽▽▽ CSSコードはこちらから▽▽▽ -->
+		//- 個別CSS
+		link(rel="stylesheet" href="./dist/css/" + pageID + ".css")
+		<!-- ▽▽▽ JavaScriptコードはこちらから▽▽▽ -->
+		//- 個別JavaScript
+		script(src="./dist/js/" + pageID + ".js" defer)
+	body
+		main.l-main
+			<!-- ▼▼▼ コンテンツの記述ここから ▼▼▼ -->
+
+			section.p-gallery
+				.p-gallery__inner.c-inner
+
+					h2.p-gallery__title.c-title-demo 【Swiper】基本のスライダー<br class="u-only-sp">(コンテンツ内に収める)
+
+					//- 注意書きがあれば書く。
+					//- p.c-text-demo 【注意】🟡🟡
+
+					.p-gallery-slide.swiper-container.js-swiper--gallery
+						.swiper-wrapper
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "slide-dami01.jpg" alt="" width="" height="" loading="lazy")
+										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "slide-dami02.jpg" alt="" width="" height="" loading="lazy")
+										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "slide-dami03.jpg" alt="" width="" height="" loading="lazy")
+										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "slide-dami01.jpg" alt="" width="" height="" loading="lazy")
+										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "slide-dami02.jpg" alt="" width="" height="" loading="lazy")
+										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "slide-dami03.jpg" alt="" width="" height="" loading="lazy")
+										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
+									</a>
+
+						<!-- 必要ならページャーを入れる -->
+						<!-- .swiper-paginationを入れると、デフォルトのページャーが表示される -->
+						.swiper-pagination.swiper-pagination--gallery
+
+						<!-- 必要ならナビゲーションボタンを入れる -->
+						<!-- .swiper-button-prev.swiper-button-nextを入れると、デフォルトのボタンが表示される -->
+						.swiper-button-prev.swiper-button-prev--gallery
+						.swiper-button-next.swiper-button-next--gallery

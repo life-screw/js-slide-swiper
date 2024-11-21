@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="email=no,telephone=no,address=no">
+    <title>【Swiper】一定のスピードで流れる、スムーススライド　スクロールバー表示</title>
+    <meta name="description" content="【Swiper】一定のスピードで流れる、スムーススライド　スクロールバー表示">
+    <link rel="stylesheet" href="./dist/css/common.css"><!-- ▽▽▽ CSSコードはこちらから▽▽▽ -->
+    <link rel="stylesheet" href="./dist/css/swiper-scrollbar-linear.css"><!-- ▽▽▽ JavaScriptコードはこちらから▽▽▽ -->
+    <script src="./dist/js/swiper-scrollbar-linear.js" defer></script>
+  </head>
+  <body>
+    <main class="l-main"><!-- ▼▼▼ コンテンツの記述ここから ▼▼▼ -->
+      <section class="p-gallery">
+        <div class="p-gallery__inner">
+          <div class="c-inner">
+            <h2 class="p-gallery__title c-title-demo">【Swiper】<br>一定のスピードで流れる、スムーススライド<br>スクロールバー表示</h2>
+            <p class="c-text-demo">【注意】 スムーススライドでは、「ナビゲーションボタン」がうまく機能しないです。<br>ナビゲーションをクリックすると、スライドが流れる方向を変更できますが、反応が鈍いです。</p>
+          </div>
+          <div class="p-gallery-slide swiper-container js-swiper--gallery">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><!-- 装飾（任意）-->
+                <div class="p-gallery-slide__wrapper"><a class="p-gallery-slide__inner"><img src="./dist/img/common/01top_sp.jpg" alt="" width="275" height="378" loading="lazy"></a></div>
+              </div>
+              <div class="swiper-slide"><!-- 装飾（任意）-->
+                <div class="p-gallery-slide__wrapper"><a class="p-gallery-slide__inner"><img src="./dist/img/common/02top_sp.jpg" alt="" width="275" height="378" loading="lazy"></a></div>
+              </div>
+              <div class="swiper-slide"><!-- 装飾（任意）-->
+                <div class="p-gallery-slide__wrapper"><a class="p-gallery-slide__inner"><img src="./dist/img/common/03top_sp.jpg" alt="" width="275" height="378" loading="lazy"></a></div>
+              </div>
+              <div class="swiper-slide"><!-- 装飾（任意）-->
+                <div class="p-gallery-slide__wrapper"><a class="p-gallery-slide__inner"><img src="./dist/img/common/01top_sp.jpg" alt="" width="275" height="378" loading="lazy"></a></div>
+              </div>
+              <div class="swiper-slide"><!-- 装飾（任意）-->
+                <div class="p-gallery-slide__wrapper"><a class="p-gallery-slide__inner"><img src="./dist/img/common/02top_sp.jpg" alt="" width="275" height="378" loading="lazy"></a></div>
+              </div>
+              <div class="swiper-slide"><!-- 装飾（任意）-->
+                <div class="p-gallery-slide__wrapper"><a class="p-gallery-slide__inner"><img src="./dist/img/common/03top_sp.jpg" alt="" width="275" height="378" loading="lazy"></a></div>
+              </div>
+            </div><!-- 必要ならスクロールバーを入れる -->
+<!-- .swiper-paginationを入れると、デフォルトのスクロールバーが表示される -->
+            <div class="swiper-scrollbar swiper-scrollbar--gallery-furisode"></div>
+          </div>
+        </div>
+      </section><!-- ▲▲▲ コンテンツの記述ここまで ▲▲▲ -->
+    </main>
+  </body>
+</html>

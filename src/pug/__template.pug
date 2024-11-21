@@ -1,0 +1,41 @@
+//- ページのID名
+- const pageID = "⭕️⭕️"
+//- 画像パス
+- const imgPathCommon = "./dist/img/common/"
+//- - const imgPath = "./dist/img/" +  pageID + "/"
+include ./_mixinPic
+
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="format-detection" content="email=no,telephone=no,address=no")
+		title 【Swiper】🟢🟢
+		meta(name="description" content="【Swiper】🟢🟢")
+		//- 共通CSS
+		link(rel="stylesheet" href="./dist/css/common.css")
+		<!-- ▽▽▽ CSSコードはこちらから▽▽▽ -->
+		//- 個別CSS
+		link(rel="stylesheet" href="./dist/css/" + pageID + ".css")
+		<!-- ▽▽▽ JavaScriptコードはこちらから▽▽▽ -->
+		//- 個別JavaScript
+		script(src="./dist/js/" + pageID + ".js" defer)
+	body
+		main.l-main
+			<!-- ▼▼▼ コンテンツの記述ここから ▼▼▼ -->
+
+			section.p-gallery
+				.p-gallery__inner
+
+					.c-inner
+						h2.p-gallery__title.c-title-demo 【Swiper】🟢🟢
+
+						//- 注意書きがあれば書く。
+						p.c-text-demo 【注意】🟡🟡
+
+					.p-gallery-slide.swiper-container.js-swiper--gallery
+					//- スライドエリア(ここにコピペ)
+
+			<!-- ▲▲▲ コンテンツの記述ここまで ▲▲▲ -->

@@ -1,0 +1,42 @@
+//- 参考サイト https://flex-box.net/mixin-webp/
+//- +webpImg("pictureにつけるクラス名", "ファイル名", "jpg", "alt文字", trueだとPCとSPを設置, "375", "600", "1280", "400")
+mixin picImg(className, imgName, extension, altName, smp, widthSp, heightSp, widthPc, heightPc)
+	picture(class=className)
+		if (smp === true)
+			source(
+				media="(min-width: 751px)",
+				srcset=imgPath + imgName + "_pc" + "." + extension,
+				width=widthPc,
+				height=heightPc
+			)
+			img(
+				src=imgPath + imgName + "_sp" + "." + extension,
+				width=widthSp,
+				height=heightSp,
+				alt=altName,
+				loading="lazy"
+			)
+		else
+			source(srcset=imgPath + imgName + "." + extension, type="image/webp")
+			img(src=imgPath + imgName + "." + extension, width=widthSp, height=heightSp, alt=altName, loading="lazy")
+
+
+mixin picImgEarly(className, imgName, extension, altName, smp, widthSp, heightSp, widthPc, heightPc)
+	picture(class=className)
+		if (smp === true)
+			source(
+				media="(min-width: 751px)",
+				srcset=imgPath + imgName + "_pc" + "." + extension,
+				width=widthPc,
+				height=heightPc
+			)
+			img(
+				src=imgPath + imgName + "_sp" + "." + extension,
+				width=widthSp,
+				height=heightSp,
+				alt=altName,
+				loading="eager"
+			)
+		else
+			source(srcset=imgPath + imgName + "." + extension, type="image/webp")
+			img(src=imgPath + imgName + "." + extension, width=widthSp, height=heightSp, alt=altName, loading="eager")

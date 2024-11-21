@@ -1,0 +1,74 @@
+//- ページのID名
+- const pageID = "swiper-vertical"
+//- 画像パス
+- const imgPathCommon = "./dist/img/common/"
+//- - const imgPath = "./dist/img/" +  pageID + "/"
+include ./_mixinPic
+
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="format-detection" content="email=no,telephone=no,address=no")
+		title 【Swiper】SP：横スライド（高さ自動調整）、PC：縦スライド（高さ固定）
+		meta(name="description" content="【Swiper】SP：横スライド（高さ自動調整）、PC：縦スライド（高さ固定）")
+		//- 共通CSS
+		link(rel="stylesheet" href="./dist/css/common.css")
+		<!-- ▽▽▽ CSSコードはこちらから▽▽▽ -->
+		//- 個別CSS
+		link(rel="stylesheet" href="./dist/css/" + pageID + ".css")
+		<!-- ▽▽▽ JavaScriptコードはこちらから▽▽▽ -->
+		//- 個別JavaScript
+		script(src="./dist/js/" + pageID + ".js" defer)
+	body
+		main.l-main
+			<!-- ▼▼▼ コンテンツの記述ここから ▼▼▼ -->
+
+			section.p-member
+				.p-member__inner.c-inner
+
+					h2.c-title-demo 【Swiper】<br>SP：横スライド（高さ自動調整）、<br>PC：縦スライド（高さ固定）
+
+
+					.p-member-slide-area
+						.p-member-slide.swiper-container.js-swiper-slide-member
+							.swiper-wrapper
+
+								.swiper-slide
+									//- 装飾（任意）
+									.p-member__contents
+										figure.p-member__img
+											img(src= imgPathCommon + "member_sample01.svg" alt="" width="165" height="165")
+										.p-member__textarea
+											h3.p-member__title SP：横スライド（高さ自動調整）
+											h3.p-member__title PC：縦スライド（高さ固定）
+											p.p-member__text SPでは横スライド（高さ自動調整）します。PCでは、縦スライド（高さ固定）になります。
+
+								.swiper-slide
+									//- 装飾（任意）
+									.p-member__contents
+										figure.p-member__img
+											img(src= imgPathCommon + "member_sample01.svg" alt="" width="165" height="165")
+										.p-member__textarea
+											h3.p-member__title SP：横スライド（高さ自動調整）
+											h3.p-member__title PC：縦スライド（高さ固定）
+
+								.swiper-slide
+									//- 装飾（任意）
+									.p-member__contents
+										figure.p-member__img
+											img(src= imgPathCommon + "member_sample01.svg" alt="" width="165" height="165")
+										.p-member__textarea
+											h3.p-member__title SP：横スライド（高さ自動調整）
+											h3.p-member__title PC：縦スライド（高さ固定）
+											p.p-member__text SPでは横スライド（高さ自動調整）します。PCでは、縦スライド（高さ固定）になります。
+							//- 必要ならページャーを入れる
+							//- .swiper-paginationを入れると、デフォルトのページャーが表示される
+							.swiper-pagination.swiper-pagination--member
+
+						//- 必要ならナビゲーションボタンを入れる
+						//- .swiper-button-prev.swiper-button-nextを入れると、デフォルトのボタンが表示される
+						.swiper-button-prev.swiper-button-prev--member
+						.swiper-button-next.swiper-button-next--member

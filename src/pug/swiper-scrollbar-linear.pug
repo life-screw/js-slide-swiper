@@ -1,0 +1,86 @@
+//- ページのID名
+- const pageID = "swiper-scrollbar-linear"
+//- 画像パス
+- const imgPathCommon = "./dist/img/common/"
+//- - const imgPath = "./dist/img/" +  pageID + "/"
+include ./_mixinPic
+
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="format-detection" content="email=no,telephone=no,address=no")
+		title 【Swiper】一定のスピードで流れる、スムーススライド　スクロールバー表示
+		meta(name="description" content="【Swiper】一定のスピードで流れる、スムーススライド　スクロールバー表示")
+		//- 共通CSS
+		link(rel="stylesheet" href="./dist/css/common.css")
+		<!-- ▽▽▽ CSSコードはこちらから▽▽▽ -->
+		//- 個別CSS
+		link(rel="stylesheet" href="./dist/css/" + pageID + ".css")
+		<!-- ▽▽▽ JavaScriptコードはこちらから▽▽▽ -->
+		//- 個別JavaScript
+		script(src="./dist/js/" + pageID + ".js" defer)
+	body
+		main.l-main
+			<!-- ▼▼▼ コンテンツの記述ここから ▼▼▼ -->
+
+			section.p-gallery
+				.p-gallery__inner
+
+					.c-inner
+						h2.p-gallery__title.c-title-demo 【Swiper】<br>一定のスピードで流れる、スムーススライド<br>スクロールバー表示
+
+						p.c-text-demo 【注意】 スムーススライドでは、「ナビゲーションボタン」がうまく機能しないです。<br>ナビゲーションをクリックすると、スライドが流れる方向を変更できますが、反応が鈍いです。
+
+					.p-gallery-slide.swiper-container.js-swiper--gallery
+						.swiper-wrapper
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "01top_sp.jpg" alt="" width="275" height="378" loading="lazy")
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "02top_sp.jpg" alt="" width="275" height="378" loading="lazy")
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "03top_sp.jpg" alt="" width="275" height="378" loading="lazy")
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "01top_sp.jpg" alt="" width="275" height="378" loading="lazy")
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "02top_sp.jpg" alt="" width="275" height="378" loading="lazy")
+									</a>
+
+							.swiper-slide
+								<!-- 装飾（任意）-->
+								.p-gallery-slide__wrapper
+									<a class="p-gallery-slide__inner">
+										img(src= imgPathCommon + "03top_sp.jpg" alt="" width="275" height="378" loading="lazy")
+									</a>
+
+						<!-- 必要ならスクロールバーを入れる -->
+						<!-- .swiper-paginationを入れると、デフォルトのスクロールバーが表示される -->
+						.swiper-scrollbar.swiper-scrollbar--gallery-furisode
+
+			<!-- ▲▲▲ コンテンツの記述ここまで ▲▲▲ -->
