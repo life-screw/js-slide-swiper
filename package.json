@@ -6,7 +6,9 @@
   "exports": {
     ".": "./src/js/common.js",
     "./swiper-vertical": "./src/js/swiper-vertical.js",
-    "./swiper-per-view3": "./src/js/swiper-per-view3.js"
+    "./swiper-per-view3": "./src/js/swiper-per-view3.js",
+    "./swiper-scrollbar-linear": "./src/js/swiper-scrollbar-linear.js",
+    "./swiper-fade": "./src/js/swiper-fade.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

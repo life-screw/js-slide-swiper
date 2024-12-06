@@ -1,0 +1,23 @@
+@use "sass:math";
+@use "../../Setting/"as s;
+
+.p-gallery-slide {
+	position: relative;
+	width: 100%;
+	height: 100svh; //画像をウィンドウサイズに合わせる時はここを設定
+	overflow: hidden;
+
+	&__wrapper {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
