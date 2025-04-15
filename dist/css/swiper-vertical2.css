@@ -1,254 +1,4 @@
 @charset "UTF-8";
-a,
-abbr,
-acronym,
-address,
-applet,
-big,
-blockquote,
-body,
-caption,
-cite,
-code,
-dd,
-del,
-dfn,
-div,
-dl,
-dt,
-em,
-fieldset,
-font,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-html,
-iframe,
-img,
-ins,
-kbd,
-label,
-legend,
-li,
-object,
-ol,
-p,
-pre,
-q,
-s,
-samp,
-small,
-span,
-strike,
-strong,
-sub,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr,
-tt,
-ul,
-var {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-
-:focus {
-  outline: 0;
-}
-
-a,
-a:active,
-a:hover,
-a:link,
-a:visited {
-  text-decoration: none;
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-td,
-th {
-  text-align: left;
-  font-weight: normal;
-}
-
-iframe,
-img {
-  border: none;
-  text-decoration: none;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-button,
-input,
-select,
-textarea {
-  font-size: 100%;
-  font-family: inherit;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-select {
-  margin: inherit;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-hr {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  color: #000;
-  background-color: #000;
-  height: 1px;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-font-feature-settings: "palt" 1;
-  font-feature-settings: "palt" 1;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
-}
-
-a {
-  text-decoration: none;
-}
-
-strong {
-  font-weight: bold;
-}
-
-ul li a img {
-  margin: 0;
-  padding: 0;
-}
-
-li img {
-  vertical-align: bottom;
-}
-
-a:focus {
-  overflow: hidden;
-  outline: none;
-}
-
-ol,
-ul {
-  list-style: none outside none;
-}
-
-ol.link,
-ul.link {
-  list-style: outside none none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-main {
-  display: block;
-}
-
-i {
-  font-style: normal;
-}
-
-:root {
-  --color-base: #000;
-  --color-main: #0070e5;
-  --font-mincho: "ヒラギノ明朝 ProN W3",
-  	"Hiragino Mincho ProN",
-  	"Noto Serif JP",
-  	"游明朝",
-  	YuMincho,
-  	"HG明朝E",
-  	"ＭＳ Ｐ明朝",
-  	"ＭＳ 明朝",
-  	serif;
-  --font-serif: "Cormorant Infant", serif;
-  --font-gothic: "ヒラギノ角ゴ ProN W3",
-  	"Hiragino Kaku Gothic ProN",
-  	"游ゴシック",
-  	"Yu Gothic",
-  	"メイリオ",
-  	sans-serif;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  word-break: normal;
-  font-size: 62.5%;
-}
-
-body {
-  background-color: #fff;
-  color: var(--color-base);
-  font-family: var(--font-gothic);
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.73;
-  text-align: center;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "palt";
-          font-feature-settings: "palt";
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: var(--color-base);
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-}
-
-a:hover {
-  opacity: 0.7;
-  -moz-opacity: 0.7;
-  -khtml-opacity: 0.7;
-}
-
 /*英語フォント*/
 @-webkit-keyframes fadeIn {
   0% {
@@ -378,104 +128,83 @@ a:hover {
     background-position: -100% 0;
   }
 }
-.c-inner {
-  width: calc(100% - 16vw);
-  margin: auto;
-  max-width: 856px;
-}
-@media print, screen and (min-width:769px) {
-  .c-inner {
-    width: calc(100% - 8vw);
-  }
-}
-
-.c-inner-wide {
-  width: calc(100% - 8vw);
-  margin: auto;
-  max-width: 856px;
-}
-@media print, screen and (min-width:769px) {
-  .c-inner-wide {
-    width: calc(100% - 8vw);
-  }
-}
-
-.c-inner-pc {
-  width: 100%;
-  margin: auto;
-  max-width: 1000px;
-}
-@media print, screen and (min-width:769px) {
-  .c-inner-pc {
-    width: calc(100% - 12.8205128205vw);
-  }
-}
-
-.c-title-demo {
-  margin: 1em auto;
-  line-height: 1.5;
-  font-size: 4.8vw;
-  white-space: nowrap;
-}
-@media print, screen and (min-width:769px) {
-  .c-title-demo {
-    font-size: 36px;
-  }
-}
-
-.c-text-demo {
-  margin: 1em auto;
-  line-height: 1.5;
-  font-size: min(3.6vw, 1.728rem);
-  line-height: 1.6296296296;
-  text-align: left;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-@media print, screen and (min-width:769px) {
-  .c-text-demo {
-    font-size: 16px;
-  }
-}
-
-.u-fitcover {
-  -o-object-fit: cover;
-     object-fit: cover;
-  font-family: "object-fit: cover;";
-  width: 100%;
-  height: 100%;
-}
-.u-fitcover img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  font-family: "object-fit: cover;";
-  width: 100%;
-  height: 100%;
-  -o-object-position: top center;
-     object-position: top center;
-}
-
-/*PCのみ*/
-@media only screen and (max-width:768px) {
-  .u-only-pc {
-    display: none !important;
-  }
-}
-
-/*スマホのみ*/
-@media print, screen and (min-width:769px) {
-  .u-only-sp {
-    display: none !important;
-  }
-}
-
-.u-upper {
-  text-transform: uppercase;
-}
-
-.l-main {
+.p-fv-slide {
   overflow: hidden;
   position: relative;
-  z-index: 1;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+@media print, screen and (min-width:769px) {
+  .p-fv-slide {
+    height: 100svh;
+    margin: 0;
+  }
+}
+
+@media print, screen and (min-width:769px) {
+  .p-fv-slide {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+@media print, screen and (min-width:769px) {
+  .p-fv-slide__contents {
+    height: 100%;
+  }
+}
+@media only screen and (max-width:768px) {
+  .p-fv-slide__img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media print, screen and (min-width:769px) {
+  .p-fv-slide__img {
+    height: 100%;
+    width: auto;
+  }
+}
+@media only screen and (max-width:768px) {
+  .p-fv-slide__img img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media print, screen and (min-width:769px) {
+  .p-fv-slide__img img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+/*スライド以外の装飾---------------------*/
+.p-fv {
+  position: relative;
+  overflow: hidden;
+}
+@media print, screen and (min-width:769px) {
+  .p-fv {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    max-width: 970px;
+  }
+}
+
+.p-fv-copy {
+  text-align: justify;
+  -moz-text-align-last: left;
+       text-align-last: left;
+  z-index: 50;
+}
+@media print, screen and (min-width:769px) {
+  .p-fv-copy {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 496px;
+  }
 }

@@ -1,0 +1,101 @@
+@use "sass:math";
+@use "../../Setting/" as s;
+
+.p-fv-slide {
+  //カレントスライド以外のスライドが見えないようにする
+  overflow: hidden;
+  //装飾（任意）
+  position: relative;
+  // padding: s.vw(s.$spDesign, 35) min(37px, s.vw(s.$spDesign, 37)) s.vw(s.$spDesign, 35+10);
+  margin-top: 25px;
+  margin-bottom: 35px;
+
+  @include s.media(md) {
+    //タブレット・pcの時
+
+    //スライドを縦方向にする
+    height: 100svh; //高さを固定する
+    margin: 0;
+  }
+}
+
+//スライドの中の装飾（任意）
+.p-fv-slide {
+  $this: &;
+
+  @include s.media(md) {
+    //タブレット・pcの時
+
+    //【縦スライド】スライドの横幅を子要素に合わせる
+    width: fit-content;
+  }
+
+  &__contents {
+    @include s.media(md) {
+      //タブレット・pcの時
+      //【縦スライド】スライドの高さに合わせる
+      height: 100%;
+    }
+  }
+
+  &__img {
+    @include s.media(mdmax) {
+      //スマホの時のみ
+      width: 100%;
+      height: auto;
+    }
+    @include s.media(md) {
+      //タブレット・pcの時
+      //【縦スライド】スライドの高さに合わせる
+      height: 100%;
+      //【縦スライド】横幅は合わせない
+      width: auto;
+    }
+
+    img {
+      @include s.media(mdmax) {
+        //スマホの時のみ
+        width: 100%;
+        height: auto;
+      }
+      @include s.media(md) {
+        //タブレット・pcの時
+        //【縦スライド】スライドの高さに合わせる
+        height: 100%;
+        //【縦スライド】横幅は合わせない
+        width: auto;
+      }
+    }
+  }
+}
+
+/*スライド以外の装飾---------------------*/
+.p-fv {
+  position: relative;
+  // width: 100%;
+  //height: 138vw;
+  // height: 100svh;
+  overflow: hidden;
+
+  @include s.media(md) {
+    //タブレット・pcの時
+    height: fit-content;
+    max-width: 970px;
+  }
+}
+
+.p-fv-copy {
+  text-align: justify;
+  text-align-last: left;
+  z-index: 50;
+
+  @include s.media(md) {
+    //タブレット・pcの時
+    position: absolute;
+    top: 50%;
+    // bottom: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 496px;
+  }
+}

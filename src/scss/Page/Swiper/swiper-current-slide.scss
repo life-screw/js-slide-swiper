@@ -1,0 +1,127 @@
+@use "sass:math";
+@use "../../Setting/" as s;
+
+.p-works-slide {
+  //カレントスライド以外のスライドが見えないようにする
+  //   overflow: hidden;
+  //装飾（任意）
+  position: relative;
+  //文字がはみ出る分paddingを増やす
+  padding-bottom: s.vw(s.$spDesign, 115);
+
+  margin-top: s.vw(s.$spDesign, 150);
+  margin-bottom: s.vw(s.$spDesign, 160);
+
+  @include s.media(md) {
+    //タブレット・pcの時
+    //文字がはみ出る分paddingを増やす
+    padding-bottom: 10%;
+
+    margin-top: 150px;
+    margin-bottom: 135px;
+  }
+}
+
+//スライドの中の装飾（任意）
+.p-works-slide {
+  $this: &;
+
+  &__contents {
+    // width: s.vw(s.$spDesign, 232);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    //テキストの親要素
+    position: relative;
+  }
+
+  &__textarea {
+    //カレントクラス以外見えなくする
+    display: none;
+    //下側の中央に浮かす
+    position: absolute;
+    bottom: s.vw(s.$spDesign, -120);
+    left: 50%; // 親要素の中央に配置
+    transform: translate(-50%, 0); // 親要素の中央に配置
+    width: 25em;
+    @include s.media(md) {
+      //タブレット・pcの時
+      bottom: -30%;
+    }
+
+    .company {
+      color: #626262;
+      font-size: max(10px, s.vw(s.$spDesign, 10));
+
+      @include s.media(md) {
+        //タブレット・pcの時
+        font-size: 13px;
+      }
+    }
+
+    .info {
+      color: #121212;
+      font-size: max(10px, s.vw(s.$spDesign, 12));
+      font-weight: 400;
+
+      @include s.media(md) {
+        //タブレット・pcの時
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    /*アクティブスライドを大きくする*/
+    transition: transform 0.1s ease-in-out; //小さくなる時
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    position: relative;
+    width: fit-content;
+    margin-bottom: 0.05em;
+    // フォントサイズ, 行送り , 太さ, トラッキング
+    @include s.f_sp-min_around(18, false, bold, false);
+
+    @include s.media(md) {
+      //タブレット・pcの時
+      margin-bottom: 0.4em;
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+
+  &__text {
+    margin-top: 1.6em;
+    // フォントサイズ, 行送り , 太さ, トラッキング
+    @include s.f_sp-min_around(13, 22, bold, 30);
+
+    @include s.media(md) {
+      // フォントサイズ, 行送り , 太さ, トラッキング
+      @include s.f_pc_around(14, 24, false, 30);
+    }
+  }
+
+  /*アクティブスライドを大きくする*/
+  .swiper-slide-active {
+    #{$this}__img {
+      /*アクティブスライドを大きくする*/
+      transform: scale(1.6);
+      transition: transform 0.3s ease-in-out; //大きくなる時
+      @include s.media(md) {
+        //タブレット・pcの時
+        transform: scale(1.3);
+      }
+    }
+    #{$this}__textarea {
+      display: block;
+    }
+  }
+}

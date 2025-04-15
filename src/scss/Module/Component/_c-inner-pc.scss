@@ -1,0 +1,13 @@
+@use "sass:math";
+@use "../../Setting/" as s;
+
+.c-inner-pc {
+  width: 100%;
+  margin: auto;
+  max-width: 1000px;
+
+  @include s.media(md) {
+    //タブレット・pcの時
+    width: calc(100% - s.vw(390, 390 - 340));
+  }
+}
