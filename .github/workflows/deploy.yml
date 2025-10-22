@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - main # テスト環境なら dev など別ブランチでも可
+
+name: FTP 自動デプロイ (テスト)
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: コードをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: FTP に同期
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_HOSTNAME }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # オプション例
+          protocol: ftps
+          port: 21
+          local-dir: ./ # リポジトリルートからアップロード
+          server-dir: /path/to/test-env/ # FTP側のディレクトリ
