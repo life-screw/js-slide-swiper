@@ -32,9 +32,12 @@ html(lang="ja")
 					.c-inner
 						h2.p-gallery__title.c-title-demo 【Swiper】カレントスライドが大きくなる
 
+				!= "\n"
+				// スライド部分
 				.p-works-slide.swiper-container.js-works-slide
 					.swiper-wrapper
 						each num in [1, 2, 3, 4, 5, 6, 7, 8]
+							// スライド
 							.swiper-slide
 								//- 装飾（任意）
 								.p-works-slide__contents
@@ -43,5 +46,7 @@ html(lang="ja")
 									.p-works-slide__textarea
 										p.company A株式会社
 										p.info コーポレートサイト
+				// /スライド部分
+				!= "\n"
 
 			<!-- ▲▲▲ コンテンツの記述ここまで ▲▲▲ -->

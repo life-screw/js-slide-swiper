@@ -16,9 +16,12 @@
       <section class="p-member">
         <div class="p-member__inner c-inner">
           <h2 class="c-title-demo">【Swiper】<br>SP：横スライド（高さ自動調整）、<br>PC：縦スライド（高さ固定）</h2>
+
+          <!-- スライド部分-->
           <div class="p-member-slide-area">
             <div class="p-member-slide swiper-container js-swiper-slide-member">
               <div class="swiper-wrapper">
+                <!-- スライド-->
                 <div class="swiper-slide">
                   <div class="p-member__contents">
                     <figure class="p-member__img"><img src="./dist/img/common/member_sample01.svg" alt="" width="165" height="165"></figure>
@@ -29,6 +32,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- スライド-->
                 <div class="swiper-slide">
                   <div class="p-member__contents">
                     <figure class="p-member__img"><img src="./dist/img/common/member_sample01.svg" alt="" width="165" height="165"></figure>
@@ -38,6 +42,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- スライド-->
                 <div class="swiper-slide">
                   <div class="p-member__contents">
                     <figure class="p-member__img"><img src="./dist/img/common/member_sample01.svg" alt="" width="165" height="165"></figure>
@@ -49,11 +54,19 @@
                   </div>
                 </div>
               </div>
+
+              <!-- 必要ならページャーを入れる-->
+              <!-- .swiper-paginationを入れると、デフォルトのページャーが表示される-->
               <div class="swiper-pagination swiper-pagination--member"></div>
             </div>
+
+            <!-- 必要ならナビゲーションボタンを入れる-->
+            <!-- .swiper-button-prev.swiper-button-nextを入れると、デフォルトのボタンが表示される-->
             <div class="swiper-button-prev swiper-button-prev--member"></div>
             <div class="swiper-button-next swiper-button-next--member"></div>
           </div>
+          <!-- /スライド部分-->
+
         </div>
       </section>
     </main>

@@ -32,10 +32,12 @@ html(lang="ja")
 					h2.c-title-demo 【Swiper】<br>SP：横スライド（高さ自動調整）、<br>PC：縦スライド（高さ固定）
 
 
+					!= "\n"
+					// スライド部分
 					.p-member-slide-area
 						.p-member-slide.swiper-container.js-swiper-slide-member
 							.swiper-wrapper
-
+								// スライド
 								.swiper-slide
 									//- 装飾（任意）
 									.p-member__contents
@@ -46,6 +48,7 @@ html(lang="ja")
 											h3.p-member__title PC：縦スライド（高さ固定）
 											p.p-member__text SPでは横スライド（高さ自動調整）します。PCでは、縦スライド（高さ固定）になります。
 
+								// スライド
 								.swiper-slide
 									//- 装飾（任意）
 									.p-member__contents
@@ -55,6 +58,7 @@ html(lang="ja")
 											h3.p-member__title SP：横スライド（高さ自動調整）
 											h3.p-member__title PC：縦スライド（高さ固定）
 
+								// スライド
 								.swiper-slide
 									//- 装飾（任意）
 									.p-member__contents
@@ -64,11 +68,15 @@ html(lang="ja")
 											h3.p-member__title SP：横スライド（高さ自動調整）
 											h3.p-member__title PC：縦スライド（高さ固定）
 											p.p-member__text SPでは横スライド（高さ自動調整）します。PCでは、縦スライド（高さ固定）になります。
-							//- 必要ならページャーを入れる
-							//- .swiper-paginationを入れると、デフォルトのページャーが表示される
+							!= "\n"
+							// 必要ならページャーを入れる
+							// .swiper-paginationを入れると、デフォルトのページャーが表示される
 							.swiper-pagination.swiper-pagination--member
-
-						//- 必要ならナビゲーションボタンを入れる
-						//- .swiper-button-prev.swiper-button-nextを入れると、デフォルトのボタンが表示される
+						!= "\n"
+						// 必要ならナビゲーションボタンを入れる
+						// .swiper-button-prev.swiper-button-nextを入れると、デフォルトのボタンが表示される
 						.swiper-button-prev.swiper-button-prev--member
 						.swiper-button-next.swiper-button-next--member
+
+					// /スライド部分
+					!= "\n"

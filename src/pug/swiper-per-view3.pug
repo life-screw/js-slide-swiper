@@ -34,62 +34,74 @@ html(lang="ja")
 					//- 注意書きがあれば書く。
 					//- p.c-text-demo 【注意】🟡🟡
 
+					!= "\n"
+					// スライド部分
 					.p-gallery-slide.swiper-container.js-swiper--gallery
 						.swiper-wrapper
 
+							// スライド
 							.swiper-slide
-								<!-- 装飾（任意）-->
+								//- 装飾（任意）
 								.p-gallery-slide__wrapper
 									<a class="p-gallery-slide__inner">
 										img(src= imgPathCommon + "slide-dami01.jpg" alt="" width="" height="" loading="lazy")
 										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
 									</a>
 
+							// スライド
 							.swiper-slide
-								<!-- 装飾（任意）-->
+								//- 装飾（任意）
 								.p-gallery-slide__wrapper
 									<a class="p-gallery-slide__inner">
 										img(src= imgPathCommon + "slide-dami02.jpg" alt="" width="" height="" loading="lazy")
 										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
 									</a>
 
+							// スライド
 							.swiper-slide
-								<!-- 装飾（任意）-->
+								//- 装飾（任意）
 								.p-gallery-slide__wrapper
 									<a class="p-gallery-slide__inner">
 										img(src= imgPathCommon + "slide-dami03.jpg" alt="" width="" height="" loading="lazy")
 										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
 									</a>
 
+							// スライド
 							.swiper-slide
-								<!-- 装飾（任意）-->
+								//- 装飾（任意）
 								.p-gallery-slide__wrapper
 									<a class="p-gallery-slide__inner">
 										img(src= imgPathCommon + "slide-dami01.jpg" alt="" width="" height="" loading="lazy")
 										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
 									</a>
 
+							// スライド
 							.swiper-slide
-								<!-- 装飾（任意）-->
+								//- 装飾（任意）
 								.p-gallery-slide__wrapper
 									<a class="p-gallery-slide__inner">
 										img(src= imgPathCommon + "slide-dami02.jpg" alt="" width="" height="" loading="lazy")
 										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
 									</a>
 
+							// スライド
 							.swiper-slide
-								<!-- 装飾（任意）-->
+								//- 装飾（任意）
 								.p-gallery-slide__wrapper
 									<a class="p-gallery-slide__inner">
 										img(src= imgPathCommon + "slide-dami03.jpg" alt="" width="" height="" loading="lazy")
 										<p class="p-gallery-slide__title">PC：スライドが3つ表示<br>SP：スライドが1つ表示</p>
 									</a>
-
-						<!-- 必要ならページャーを入れる -->
-						<!-- .swiper-paginationを入れると、デフォルトのページャーが表示される -->
+						!= "\n"
+						// 必要ならページャーを入れる
+						// .swiper-paginationを入れると、デフォルトのページャーが表示される
 						.swiper-pagination.swiper-pagination--gallery
-
-						<!-- 必要ならナビゲーションボタンを入れる -->
-						<!-- .swiper-button-prev.swiper-button-nextを入れると、デフォルトのボタンが表示される -->
+						!= "\n"
+						// 必要ならナビゲーションボタンを入れる
+						// .swiper-button-prev.swiper-button-nextを入れると、デフォルトのボタンが表示される
 						.swiper-button-prev.swiper-button-prev--gallery
 						.swiper-button-next.swiper-button-next--gallery
+						!= "\n"
+
+					// /スライド部分
+					!= "\n"

@@ -29,15 +29,21 @@ html(lang="ja")
 			section
 
 				.p-fv.c-inner-pc
-					.p-fv-slide.swiper-container.js-fv-slide
 
+					!= "\n"
+					// スライド部分
+					.p-fv-slide.swiper-container.js-fv-slide
 						.swiper-wrapper
 							each num in [1, 2, 3, 4, 5, 6, 7, 8]
+								// スライド
 								.swiper-slide
 									//- 装飾（任意）
 									.p-fv-slide__contents
 										figure.p-fv-slide__img
 											img(src= imgPathCommon + "iphone" + num + ".png" alt="" width="400" height="749")
+
+					// /スライド部分
+					!= "\n"
 
 					.p-fv-copy.c-inner
 						h2.p-gallery__title.c-title-demo 【Swiper】スマホ：横スライド、PC：縦スライド(複数枚表示)
