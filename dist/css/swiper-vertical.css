@@ -139,6 +139,14 @@
     padding-bottom: 0;
   }
 }
+.p-member-slide-area.swiper-container {
+  visibility: hidden; /* 要素を見えなくする（高さは保持） */
+  overflow: hidden; /* 念のためスライドのはみ出しを防止 */
+}
+.p-member-slide-area.swiper-container.swiper-initialized {
+  visibility: visible; /* Swiperの初期化後に表示 */
+  overflow: visible; /* 非表示のままだと両端のスライドが切れるので表示にする */
+}
 .p-member-slide-area .swiper-button-prev,
 .p-member-slide-area .swiper-button-next {
   height: 42px;

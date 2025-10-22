@@ -17,6 +17,14 @@
     height: 100svh; //高さを固定する
     margin: 0;
   }
+
+  &.swiper-container {
+    visibility: hidden; /* 要素を見えなくする（高さは保持） */
+  }
+
+  &.swiper-container.swiper-initialized {
+    visibility: visible; /* Swiperの初期化後に表示 */
+  }
 }
 
 //スライドの中の装飾（任意）

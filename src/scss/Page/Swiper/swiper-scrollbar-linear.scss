@@ -1,72 +1,78 @@
 @use "sass:math";
-@use "../../Setting/"as s;
-
+@use "../../Setting/" as s;
 
 //スライドの設定===========
 .p-gallery-slide {
-	//ナビゲーションが右下に来るようにする
-	position: relative;
-	//装飾（任意）
-	padding-bottom: s.vw(s.$spDesign, 50);
-	margin-top: s.vw(s.$spDesign, 30);
+  //ナビゲーションが右下に来るようにする
+  position: relative;
+  //装飾（任意）
+  padding-bottom: s.vw(s.$spDesign, 50);
+  margin-top: s.vw(s.$spDesign, 30);
 
-	@include s.media(md) {
-		//タブレット・pcの時
-		margin-top: 55px;
-		padding-bottom: 84px;
-	}
+  @include s.media(md) {
+    //タブレット・pcの時
+    margin-top: 55px;
+    padding-bottom: 84px;
+  }
 
-	//一定のスピードで流れるようにスムースにスライドする
-	.swiper-wrapper {
-		transition-timing-function: linear;
-	}
+  &.swiper-container {
+    visibility: hidden; /* 要素を見えなくする（高さは保持） */
+    // overflow: hidden; /* 念のためスライドのはみ出しを防止 */
+  }
 
-	&__wrapper {
-		//スマホ：スライドの間隔を開ける
-		display: flex; //スライドを中央に寄せる
-		justify-content: center;
+  &.swiper-container.swiper-initialized {
+    visibility: visible; /* Swiperの初期化後に表示 */
+    // overflow: visible; /* 非表示のままだと両端のスライドが切れるので表示にする */
+  }
+  //一定のスピードで流れるようにスムースにスライドする
+  .swiper-wrapper {
+    transition-timing-function: linear;
+  }
 
-		@include s.media(md) {
-			//タブレット・pcの時
-			//PCでは必要ない要素なので解除
-			display: contents;
-		}
-	}
+  &__wrapper {
+    //スマホ：スライドの間隔を開ける
+    display: flex; //スライドを中央に寄せる
+    justify-content: center;
 
-	&__inner {
-		//スライドの大きさを指定
-		width: s.vw(s.$spDesign, 236);
+    @include s.media(md) {
+      //タブレット・pcの時
+      //PCでは必要ない要素なので解除
+      display: contents;
+    }
+  }
 
-		@include s.media(md) {
-			//タブレット・pcの時
-			width: 275px;
-		}
+  &__inner {
+    //スライドの大きさを指定
+    width: s.vw(s.$spDesign, 236);
 
-		img {
-			width: 100%;
-		}
-	}
+    @include s.media(md) {
+      //タブレット・pcの時
+      width: 275px;
+    }
 
+    img {
+      width: 100%;
+    }
+  }
 
-	//スクロールバーのCSSが必要なら設定========
-	&.swiper-horizontal {
-		&>.swiper-scrollbar {
-			@include s.inner;
-			left: 0;
-			right: 0;
-			margin: 0 auto;
-			height: 2px;
-			background-color: #DEDEDE;
+  //スクロールバーのCSSが必要なら設定========
+  &.swiper-horizontal {
+    & > .swiper-scrollbar {
+      @include s.inner;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      height: 2px;
+      background-color: #dedede;
 
-			@include s.media(md) {
-				//タブレット・pcの時
-				height: 3px;
-			}
-		}
+      @include s.media(md) {
+        //タブレット・pcの時
+        height: 3px;
+      }
+    }
 
-		.swiper-scrollbar-drag {
-			background: var(--color-main);
-		}
-	}
-
+    .swiper-scrollbar-drag {
+      background: var(--color-main);
+    }
+  }
 }

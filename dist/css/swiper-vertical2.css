@@ -140,6 +140,12 @@
     margin: 0;
   }
 }
+.p-fv-slide.swiper-container {
+  visibility: hidden; /* 要素を見えなくする（高さは保持） */
+}
+.p-fv-slide.swiper-container.swiper-initialized {
+  visibility: visible; /* Swiperの初期化後に表示 */
+}
 
 @media print, screen and (min-width:769px) {
   .p-fv-slide {

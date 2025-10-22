@@ -139,6 +139,12 @@
     padding-bottom: 84px;
   }
 }
+.p-gallery-slide.swiper-container {
+  visibility: hidden; /* 要素を見えなくする（高さは保持） */
+}
+.p-gallery-slide.swiper-container.swiper-initialized {
+  visibility: visible; /* Swiperの初期化後に表示 */
+}
 .p-gallery-slide .swiper-wrapper {
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
@@ -175,7 +181,7 @@
   right: 0;
   margin: 0 auto;
   height: 2px;
-  background-color: #DEDEDE;
+  background-color: #dedede;
 }
 @media print, screen and (min-width:769px) {
   .p-gallery-slide.swiper-horizontal > .swiper-scrollbar {

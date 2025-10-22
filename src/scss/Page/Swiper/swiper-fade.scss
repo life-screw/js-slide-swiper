@@ -1,23 +1,34 @@
 @use "sass:math";
-@use "../../Setting/"as s;
+@use "../../Setting/" as s;
 
 .p-gallery-slide {
-	position: relative;
-	width: 100%;
-	height: 100svh; //画像をウィンドウサイズに合わせる時はここを設定
-	overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100svh; //画像をウィンドウサイズに合わせる時はここを設定
+  overflow: hidden;
 
-	&__wrapper {
-		position: relative;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+  /* スライドのチラつき防止 */
+  &.swiper-container {
+    visibility: hidden; /* 要素を見えなくする（高さは保持） */
+    overflow: hidden; /* 念のためスライドのはみ出しを防止 */
+  }
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
+  &.swiper-container.swiper-initialized {
+    visibility: visible; /* Swiperの初期化後に表示 */
+    overflow: visible; /* 非表示のままだと両端のスライドが切れるので表示にする */
+  }
+
+  &__wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }

@@ -132,6 +132,7 @@
   position: relative;
   padding-bottom: 18.6666666667vw;
   margin-top: 8vw;
+  /* スライドのチラつき防止 */
   /*ページネーション（ドットの部分）が必要なら設定*/
 }
 @media print, screen and (min-width:769px) {
@@ -140,6 +141,12 @@
     margin-top: 55px;
     padding-bottom: 84px;
   }
+}
+.p-gallery-slide.swiper-container {
+  visibility: hidden; /* 要素を見えなくする（高さは保持） */
+}
+.p-gallery-slide.swiper-container.swiper-initialized {
+  visibility: visible; /* Swiperの初期化後に表示 */
 }
 .p-gallery-slide__wrapper {
   display: -webkit-box;

@@ -1,151 +1,160 @@
 @use "sass:math";
-@use "../../Setting/"as s;
-
+@use "../../Setting/" as s;
 
 .p-gallery-slide {
-	//ナビゲーションが右下に来るようにする
-	position: relative;
-	//装飾（任意）
-	padding-bottom: s.vw(s.$spDesign, 70);
-	margin-top: s.vw(s.$spDesign, 30);
+  //ナビゲーションが右下に来るようにする
+  position: relative;
+  //装飾（任意）
+  padding-bottom: s.vw(s.$spDesign, 70);
+  margin-top: s.vw(s.$spDesign, 30);
 
-	@include s.media(md) {
-		//タブレット・pcの時
-		overflow: hidden;
-		margin-top: 55px;
-		padding-bottom: 84px;
-	}
+  @include s.media(md) {
+    //タブレット・pcの時
+    overflow: hidden;
+    margin-top: 55px;
+    padding-bottom: 84px;
+  }
 
-	&__wrapper {
-		//スマホ：スライドの間隔を開ける
-		display: flex; //スライドを中央に寄せる
-		justify-content: center;
+  /* スライドのチラつき防止 */
+  &.swiper-container {
+    visibility: hidden; /* 要素を見えなくする（高さは保持） */
+    // overflow: hidden; /* 念のためスライドのはみ出しを防止 */
+  }
 
-		@include s.media(md) {
-			//タブレット・pcの時
-			//PCでは必要ない要素なので解除
-			display: contents;
-		}
-	}
+  &.swiper-container.swiper-initialized {
+    visibility: visible; /* Swiperの初期化後に表示 */
+    // overflow: visible; /* 非表示のままだと両端のスライドが切れるので表示にする */
+  }
 
-	&__inner {
-		//スライドの大きさを指定
-		width: s.vw(s.$spDesign, 236);
+  &__wrapper {
+    //スマホ：スライドの間隔を開ける
+    display: flex; //スライドを中央に寄せる
+    justify-content: center;
 
-		@include s.media(md) {
-			//タブレット・pcの時
-			width: 236px;
-		}
+    @include s.media(md) {
+      //タブレット・pcの時
+      //PCでは必要ない要素なので解除
+      display: contents;
+    }
+  }
 
-		img {
-			width: 100%;
-		}
-	}
+  &__inner {
+    //スライドの大きさを指定
+    width: s.vw(s.$spDesign, 236);
 
-	&__title {
-		//装飾（任意）
-		margin-top: 1em;
-		// フォントサイズ, 行送り , 太さ, トラッキング
-		@include s.f_sp-min_around(15, 21, bold, false);
+    @include s.media(md) {
+      //タブレット・pcの時
+      width: 236px;
+    }
 
-		@include s.media(md) {
-			//タブレット・pcの時
-			font-size: 1.5rem;
-		}
-	}
+    img {
+      width: 100%;
+    }
+  }
 
-	//ナビゲーション（前・次の矢印）のCSSが必要なら設定========
-	.swiper-button-prev,
-	.swiper-button-next {
-		height: 45px;
-		width: 45px;
-		border-radius: 50%;
-		text-indent: -9999px;
-		background: var(--color-main);
+  &__title {
+    //装飾（任意）
+    margin-top: 1em;
+    // フォントサイズ, 行送り , 太さ, トラッキング
+    @include s.f_sp-min_around(15, 21, bold, false);
 
-		// &.swiper-button-disabled {
-		// 	visibility: hidden;
-		// }
-	}
+    @include s.media(md) {
+      //タブレット・pcの時
+      font-size: 1.5rem;
+    }
+  }
 
-	//ナビゲーションが右下に来るようにする
-	.swiper-button-prev {
-		top: auto;
-		left: auto;
-		right: 45+8px;
-		bottom: 0;
+  //ナビゲーション（前・次の矢印）のCSSが必要なら設定========
+  .swiper-button-prev,
+  .swiper-button-next {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    text-indent: -9999px;
+    background: var(--color-main);
 
-		&::before {
-			content: '';
-			display: block;
-			margin: auto;
-			width: 8px;
-			height: 8px;
-			border-left: 2px solid #fff;
-			border-bottom: 2px solid #fff;
-			transform: translateX(25%) rotate(45deg);
-		}
-	}
+    // &.swiper-button-disabled {
+    // 	visibility: hidden;
+    // }
+  }
 
-	//ナビゲーションが右下に来るようにする
-	.swiper-button-next {
-		top: auto;
-		right: 0;
-		bottom: 0;
+  //ナビゲーションが右下に来るようにする
+  .swiper-button-prev {
+    top: auto;
+    left: auto;
+    right: 45+8px;
+    bottom: 0;
 
-		&::before {
-			content: '';
-			display: block;
-			margin: auto;
-			width: 8px;
-			height: 8px;
-			border-right: 2px solid #fff;
-			border-top: 2px solid #fff;
-			transform: translateX(-25%) rotate(45deg);
-		}
-	}
+    &::before {
+      content: "";
+      display: block;
+      margin: auto;
+      width: 8px;
+      height: 8px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: translateX(25%) rotate(45deg);
+    }
+  }
 
-	/*ページネーション（ドットの部分）が必要なら設定*/
-	.swiper-pagination {
+  //ナビゲーションが右下に来るようにする
+  .swiper-button-next {
+    top: auto;
+    right: 0;
+    bottom: 0;
 
-		&.swiper-pagination-bullets {
-			bottom: 10px;
+    &::before {
+      content: "";
+      display: block;
+      margin: auto;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid #fff;
+      border-top: 2px solid #fff;
+      transform: translateX(-25%) rotate(45deg);
+    }
+  }
 
-			@include s.media(mdmax) {
-				//スマホの時のみ
-				//スマホでは、左に寄せる
-				text-align: left;
-			}
+  /*ページネーション（ドットの部分）が必要なら設定*/
+  .swiper-pagination {
+    &.swiper-pagination-bullets {
+      bottom: 10px;
 
-			@include s.media(md) {
-				//タブレット・pcの時
-				//PCでは、中央に寄せる
-				left: 50%;
-				width: fit-content;
-				transform: translateX(-50%);
-			}
-		}
+      @include s.media(mdmax) {
+        //スマホの時のみ
+        //スマホでは、左に寄せる
+        text-align: left;
+      }
 
-		//装飾（任意）
-		.swiper-pagination-bullet {
-			margin: 0;
-			background-color: #c4c4c4;
-			opacity: 1;
+      @include s.media(md) {
+        //タブレット・pcの時
+        //PCでは、中央に寄せる
+        left: 50%;
+        width: fit-content;
+        transform: translateX(-50%);
+      }
+    }
 
-			&:first-child {
-				@include s.media(mdmax) {
-					//スマホの時のみ
-					margin-left: 0;
-				}
-			}
-		}
+    //装飾（任意）
+    .swiper-pagination-bullet {
+      margin: 0;
+      background-color: #c4c4c4;
+      opacity: 1;
 
-		.swiper-pagination-bullet+.swiper-pagination-bullet {
-			margin-left: .8rem;
-		}
+      &:first-child {
+        @include s.media(mdmax) {
+          //スマホの時のみ
+          margin-left: 0;
+        }
+      }
+    }
 
-		.swiper-pagination-bullet-active {
-			background-color: var(--color-main);
-		}
-	}
+    .swiper-pagination-bullet + .swiper-pagination-bullet {
+      margin-left: 0.8rem;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--color-main);
+    }
+  }
 }

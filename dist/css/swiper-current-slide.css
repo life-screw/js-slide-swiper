@@ -133,6 +133,7 @@
   padding-bottom: 30.6666666667vw;
   margin-top: 40vw;
   margin-bottom: 42.6666666667vw;
+  /* スライドのチラつき防止 */
 }
 @media print, screen and (min-width:769px) {
   .p-works-slide {
@@ -140,6 +141,14 @@
     margin-top: 150px;
     margin-bottom: 135px;
   }
+}
+.p-works-slide.swiper-container {
+  visibility: hidden; /* 要素を見えなくする（高さは保持） */
+  overflow: hidden; /* 念のためスライドのはみ出しを防止 */
+}
+.p-works-slide.swiper-container.swiper-initialized {
+  visibility: visible; /* Swiperの初期化後に表示 */
+  overflow: visible; /* 非表示のままだと両端のスライドが切れるので表示にする */
 }
 
 .p-works-slide {

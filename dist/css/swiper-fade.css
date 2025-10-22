@@ -133,6 +133,15 @@
   width: 100%;
   height: 100svh;
   overflow: hidden;
+  /* スライドのチラつき防止 */
+}
+.p-gallery-slide.swiper-container {
+  visibility: hidden; /* 要素を見えなくする（高さは保持） */
+  overflow: hidden; /* 念のためスライドのはみ出しを防止 */
+}
+.p-gallery-slide.swiper-container.swiper-initialized {
+  visibility: visible; /* Swiperの初期化後に表示 */
+  overflow: visible; /* 非表示のままだと両端のスライドが切れるので表示にする */
 }
 .p-gallery-slide__wrapper {
   position: relative;
