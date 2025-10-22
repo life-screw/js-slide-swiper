@@ -22,4 +22,4 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: ./ # リポジトリルートからアップロード
-          server-dir: /path/to/test-env/ # FTP側のディレクトリ
+          server-dir: /home/lifescrewdesign/www/lifescrewdesign.com/blog/sample/js-slide-swiper # FTP側のディレクトリ
